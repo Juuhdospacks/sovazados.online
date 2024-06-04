@@ -8,12 +8,12 @@
 	font-family: Gotham Rounded;
 }
 
-.my-4{
-color: black;	
+.my-4 {
+	color: black;	
 }
 
 #50tinha {
-color: red;
+	color: red;
 }
 
 body {
@@ -36,26 +36,28 @@ body {
 
 .black {
 	background-color: black;
-	padding: 10px;
+	padding: 20px;
 	text-align: center;
 	border-radius: 20px;
 	box-shadow: 0 0 10px 2px;
 }
 
 .answer {
-	display: grid;
-	grid-template-columns: repeat(1, auto);
-	gap: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
 }
 
 .btn {
-	border-radius: 10px;
-	padding: 5px 10px;
+	border-radius: 50px; /* Torna o botão redondo */
+	padding: 10px 20px; /* Aumenta o tamanho do botão */
 	font-size: 30px;
 	background-color: #f7ce6a;
 	outline: none;
 	color: black;
 	text-decoration: none;
+	display: inline-block; /* Garante que o botão se alinhe corretamente */
 }
 
 .black h1 {
