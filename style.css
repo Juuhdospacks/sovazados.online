@@ -1,29 +1,60 @@
+@font-face {
+	font-family: Gotham Rounded;
+	src: url("font.otf") format("opentype");
+}
+
+*, *::before, *::after {
+	box-sizing: border-box;
+	font-family: Gotham Rounded;
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0; /* Editar cor de fundo aqui */
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	background: url("bg.jpeg") no-repeat fixed center;
+	background-size: cover;
 }
 
-.button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+.container {
+	width: 700px;
+	max-width: 90%;
 }
 
-#whatsapp-button {
-    padding: 15px 30px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #ffffff;
-    background-color: #25D366; /* Editar cor do botão aqui */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.black {
+	background-color: black;
+	padding: 10px;
+	text-align: center;
+	border-radius: 20px;
+	box-shadow: 0 0 10px 2px;
 }
 
-#whatsapp-button:hover {
-    background-color: #128C7E; /* Editar cor do botão ao passar o mouse aqui */
+.answer {
+	display: grid;
+	grid-template-columns: repeat(1, auto);
+	gap: 10px;
+}
+
+.btn {
+	border-radius: 10px;
+	padding: 5px 10px;
+	font-size: 30px;
+	background-color: #f7ce6a;
+	outline: none;
+	color: black;
+	text-decoration: none;
+}
+
+.black h1 {
+	color: yellow;
+}
+
+.black p {
+	font-size: 18px;
+	color: white;
 }
