@@ -54,54 +54,55 @@
 </body>
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Redirecionando...</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-<style>
-    body {
-        font-family: 'Montserrat', sans-serif;
-        background: linear-gradient(135deg, #0d47a1, #000);
-        color: white;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-    }
-    .container {
-        max-width: 600px;
-        padding: 20px;
-        background: rgba(0, 0, 0, 0.7);
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-    .redirect-message {
-        font-size: 24px;
-        font-weight: 700;
-    }
-</style>
-<script>
-    function redirect() {
-        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-        if (isMobile) {
-            setTimeout(function() {
-                window.location.href = "https://sovazados.online/pacoteediamante.html";
-            }, 1000);
-        } else {
-            window.location.href = "https://blog.pagseguro.uol.com.br/educacao-financeira/";
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecionamento</title>
+    <script>
+        function redirecionar() {
+            // Verifica se o cookie 'visitado' está definido
+            var visitado = getCookie('visitado');
+            
+            if (!visitado) {
+                // Se o cookie não estiver definido, redireciona para a primeira URL após 5 segundos
+                setTimeout(function() {
+                    window.location.href = '/pacoteediamante.html';
+                    
+                    // Define o cookie 'visitado' para indicar que a pessoa já visitou
+                    setCookie('visitado', 'true', 365);
+                }, 5000);
+            } else {
+                // Se o cookie estiver definido, redireciona para a segunda URL após 5 segundos
+                setTimeout(function() {
+                    window.location.href = 'https://drive.google.com/drive/folders/1rFC0xqdUqdHh_gW6_GXohQPeSnW4zla0';
+                }, 5000);
+            }
         }
-    }
-</script>
+
+        // Função para obter o valor de um cookie
+        function getCookie(nome) {
+            var nomeEQ = nome + "=";
+            var cookies = document.cookie.split(';');
+            for(var i=0;i < cookies.length;i++) {
+                var c = cookies[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nomeEQ) == 0) return c.substring(nomeEQ.length,c.length);
+            }
+            return null;
+        }
+
+        // Função para definir um cookie
+        function setCookie(nome, valor, dias) {
+            var data = new Date();
+            data.setTime(data.getTime() + (dias*24*60*60*1000));
+            var expires = "expires=" + data.toUTCString();
+            document.cookie = nome + "=" + valor + "; " + expires + "; path=/";
+        }
+    </script>
 </head>
-<body onload="redirect()">
-<div class="container">
-    <p class="redirect-message">Redirecionando...</p>
-    <p class="redirect-message">Você será redirecionado em 1 segundo.</p>
-</div>
+<body onload="redirecionar()">
+    <p>Aguarde 5 segundos... Redirecionando em breve.</p>
 </body>
 </html>
 
